@@ -1,7 +1,7 @@
 export default function Projects({name, content, link,demo=null })
 {
     return(
-      <div className="border rounded-lg shadow-md p-4 max-w-md">
+      <div className="border rounded-lg shadow-md p-4 max-w-md border-pink-500 hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-green-500 transition-all duration-300">
     
         {/* Name */}
         <h3 className="text-xl font-semibold mb-2">{name}</h3>
