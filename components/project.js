@@ -1,6 +1,6 @@
-import { Github, Globe } from "lucide-react";
+import { Github, Globe, Code } from "lucide-react";
 
-export default function Projects({ name, content, link, demo = null }) {
+export default function Projects({ name, content, link, demo = null, technologies = null }) {
   return (
     <div className="border rounded-lg shadow-md p-4 max-w-md border-black transition-transform duration-300 hover:scale-105 hover:shadow-lg">
       {/* Name */}
@@ -8,6 +8,17 @@ export default function Projects({ name, content, link, demo = null }) {
 
       {/* Content */}
       <p className="text-gray-700 mb-4">{content}</p>
+
+      {/* Technologies */}
+      {technologies && (
+        <div className="mb-4">
+          <div className="flex items-center gap-1 mb-2">
+            <Code className="w-4 h-4 text-gray-600" />
+            <span className="text-sm font-medium text-gray-600">Technologies:</span>
+          </div>
+          <p className="text-sm text-blue-600 font-medium">{technologies}</p>
+        </div>
+      )}
 
       <div className="flex gap-4 mt-4">
         {/* GitHub Link */}
