@@ -22,12 +22,12 @@ export default function Skills() {
     },
     {
       title: "Cloud & DevOps",
-      skills: ["Google Cloud Platform", "AWS", "Vercel", "Docker", "Linux"],
+      skills: ["Google Cloud Platform", "AWS", "Vercel", "Docker", "Linux", "POSIX", "CI/CD"],
       color: "bg-orange-100 text-orange-800"
     },
     {
       title: "Databases & Storage",
-      skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "Firebase"],
+      skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "Firebase", "BigQuery"],
       color: "bg-pink-100 text-pink-800"
     },
     {
@@ -37,7 +37,7 @@ export default function Skills() {
     },
     {
       title: "Developer Tools",
-      skills: ["VS Code", "Jupyter", "Postman", "Google Colab"],
+      skills: ["VS Code", "Jupyter", "Postman", "Google Colab", "CMake"],
       color: "bg-yellow-100 text-yellow-800"
     }
   ];

@@ -8,12 +8,30 @@ export default function Home() {
   const experiences = [
     {
       title: "Software Engineering Intern",
+      company: "Bloomberg",
+      location: "New York, NY",
+      duration: "Jun 2026 – Present",
+      responsibilities: []
+    },
+    {
+      title: "Tech Fellow",
+      company: "Break Through Tech x Cadence",
+      location: "New York, NY",
+      duration: "Sep 2025 – Dec 2025",
+      responsibilities: [
+        "Developed pipelines to analyze 25K+ candidate/job records, improving job-to-candidate matching accuracy",
+        "Built text preprocessing services with normalization, tokenization, and REST API integration"
+      ]
+    },
+    {
+      title: "Software Engineering Intern",
       company: "Unadat",
       location: "New York, NY",
-      duration: "July 2025 – Present",
+      duration: "Jul 2025 – Aug 2025",
       responsibilities: [
-        "Developed backend APIs and server-side logic using JavaScript and PHP to support product features",
-        "Assisted in sprint planning, standups, and Agile coordination in a PM capacity to streamline team collaboration"
+        "Redesigned task management UI using JavaScript and integrated with optimized PHP backend APIs, improving usability for 100+ active users",
+        "Implemented advanced search & filtering features, cutting average task retrieval time",
+        "Extended platform from B2C into B2B markets by building a scalable terminology wrapper system, supporting new client onboarding"
       ]
     },
     {
@@ -26,46 +44,33 @@ export default function Home() {
         "Built skills in software development and AI through weekly sessions with a software engineer and AI analyst",
         "Completed collaborative case studies under the guidance of Accenture consultants"
       ]
-    },
-    {
-      title: "AI4ALL Fellow – Supervised Learning Team",
-      company: "AI4ALL",
-      location: "New York, NY",
-      duration: "Nov 2024 – Mar 2025",
-      responsibilities: [
-        "Led data preprocessing and model training for a brain tumor classification project using CNNs",
-        "Deployed model via Streamlit App for real-time inference",
-        "Engaged with AI professionals to explore ethical and practical applications of machine learning"
-      ]
     }
   ];
 
   const projects = [
     {
+      name: 'Real-Time 2D Physics Engine',
+      content: 'Built a real-time rigid-body physics engine simulating 10,000+ circular bodies at a consistent 60 FPS with fixed-timestep integration. Implemented spatial grid broad-phase collision detection and impulse-based resolution, plus interactive controls for gravity, boundaries, and real-time FPS/energy visualization.',
+      link: 'https://github.com/AJ576/physics_engine',
+      technologies: 'C++17, SDL2, CMake'
+    },
+    {
+      name: 'Unix Shell in C++',
+      content: 'Engineered a Unix-like shell implementing process creation and execution via fork/execvp, with support for pipelines and I/O redirection. Designed a job control system using process groups and SIGCHLD handling, and built a robust parser supporting quotes, escapes, and multi-stage pipelines.',
+      link: 'https://github.com/AJ576/shell',
+      technologies: 'C++17'
+    },
+    {
+      name: 'Cosmere Archivist – RAG System',
+      content: 'Crawled and structured 6,000+ wiki documents into a cleaned dataset via an automated ETL pipeline with deduplication and embedding generation. Replaced brute-force search with FAISS semantic search, cutting query latency by 80%, and containerized the backend with Docker.',
+      link: 'https://github.com/AJ576/loreGPT',
+      technologies: 'Python, FastAPI, Next.js, Docker, FAISS, VectorDB, Gemini'
+    },
+    {
       name: 'SitRight – Posture Detection App',
       content: 'Built a real-time posture monitoring system by integrating MediaPipe and OpenCV to extract body keypoints. Trained a TensorFlow Sequential Neural Network achieving 87% accuracy to provide feedback.',
       link: 'https://github.com/AJ576/SitRight',
       technologies: 'TensorFlow, OpenCV, MediaPipe, WebSockets'
-    },
-    {
-      name: 'MLB Play Prediction',
-      content: 'Engineered a Random Forest model to predict baseball pitch outcomes using 10 years of historical data. Achieved 91% accuracy with the test dataset and deployed as a Vertex AI endpoint.',
-      link: 'https://github.com/AJ576/MLB-Prediction',
-      technologies: 'Google Cloud, Vertex AI, scikit-learn, Flask'
-    },
-    {
-      name: 'Brain Tumor Classifier',
-      content: 'Implemented a CNN in PyTorch for multi-class brain tumor detection from MRI scans. Boosted accuracy from 60% to 85% through cyclical learning rate scheduling and data augmentation.',
-      link: 'https://github.com/AJ576/BRAIN_TUMOR_CLASSIFIER',
-      demo: 'https://braintumorclassifier.streamlit.app/',
-      technologies: 'PyTorch, Seaborn, Streamlit'
-    },
-    {
-      name: 'UpLift – Mental Wellness Platform',
-      content: 'Developed a journaling and anonymous mood-sharing app with full-stack TypeScript and Supabase. Enabled mood streak tracking, CRUD journaling, and built-in toxicity filtering.',
-      link: 'https://github.com/UpLift-CodePath-Web103/Uplift',
-      demo: 'https://uplift-codepath.netlify.app/',
-      technologies: 'Next.js, TypeScript, Supabase, shadcn/ui'
     }
   ];
 
@@ -90,10 +95,10 @@ export default function Home() {
             id="hero"
             className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center min-h-screen px-6"
           >
-            <div className="max-w-2xl">
+            <div className="max-w-4xl">
               <h1 className="text-5xl font-extrabold mb-4">Aditya Jha</h1>
               <p className="text-lg font-medium text-gray-200 mb-6">
-                Software Engineering Intern | CS Student at CCNY | AI & ML Enthusiast
+                Software Engineering Intern | CS Student at CCNY | Real-Time Systems & AI/ML Enthusiast
               </p>
               <div className="flex gap-4 justify-center">
               <a href="#about"><button className="px-6 py-3 bg-transparent border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-500">
@@ -108,9 +113,8 @@ export default function Home() {
             <p className="text-lg text-gray-600 text-center max-w-2xl">
               Hello there! <br />
               My name is Aditya Jha, I am a Computer Science Major at CCNY.<br />
-              I love building things ranging from full-fledged ML applications like a Brain Tumor classifier
-              and a Posture detection app to quirky things like a RAG tool that knows bash like the back of its metaphorical hand (currently a WIP).<br />
-              Currently I am deep into Machine Learning and RAGs and want to master them.
+              I love building things ranging from full-fledged ML applications like a Posture detection app to quirky things like a RAG system that knows the Cosmere book universe like the back of its metaphorical hand.<br />
+              Currently I am deep into Machine Learning and RAGs and want to master them, and I've also been getting really into real-time systems and distributed systems.
               On the side, I love fiddling with full stack dev.<br />
               I also enjoy reading Science Fiction (please read <em>Blindsight</em>), playing some <em>Breath of the Wild</em> on the Switch, and Squash in the real world.
             </p>
@@ -142,8 +146,15 @@ export default function Home() {
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-800 mb-4">Professional Experience</h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  My journey in the tech industry, from internships to mentorship programs
+                  My journey in the tech industry, from internships to fellowships
                 </p>
+              </div>
+
+              {/* Forward-looking note */}
+              <div className="text-center mb-10">
+                <div className="inline-block bg-gray-100 rounded-lg px-6 py-3">
+                  <p className="text-gray-600 font-medium">Always excited for what's next. More to come!</p>
+                </div>
               </div>
               
               <div className="max-w-4xl mx-auto">
@@ -157,13 +168,6 @@ export default function Home() {
                     responsibilities={experience.responsibilities}
                   />
                 ))}
-              </div>
-              
-              {/* Future experiences placeholder */}
-              <div className="text-center mt-12">
-                <div className="inline-block bg-gray-100 rounded-lg px-6 py-3">
-                  <p className="text-gray-600 font-medium">More experiences coming soon...</p>
-                </div>
               </div>
             </div>
           </section>
