@@ -1,5 +1,7 @@
 import { Linkedin, Github, Mail } from "lucide-react";
 import Header from "@/components/header";
+import Tesseract from "@/components/tesseract";
+import ScrollTrail from "@/components/scroll-trail";
 import Projects from "@/components/project";
 import Experience from "@/components/experience";
 import Skills from "@/components/skills";
@@ -24,7 +26,7 @@ export default function Home() {
       location: "New York, NY",
       duration: "Sep 2025 – May 2026",
       responsibilities: [
-        "Selected for a competitive mentorship program",
+        "Selected for a competitive mentorship program run by Basta",
         "Met weekly with Google engineers to develop my software engineering and problem-solving skills",
       ],
     },
@@ -104,35 +106,40 @@ export default function Home() {
       <main id="main">
         {/* Hero */}
         <section id="hero" className="hero">
-          <div className="container hero__inner">
-            <p className="hero__kicker">
-              Computer science at City College of New York
-            </p>
+          <div className="container hero__grid">
+            <div className="hero__inner">
+              <p className="hero__kicker">
+                Computer science at City College of New York
+              </p>
 
-            <h1 className="hero__name">Aditya Jha</h1>
+              <h1 className="hero__name">Aditya Jha</h1>
 
-            <p className="hero__lede">
-              I build systems that have to keep up: real-time data pipelines,
-              physics engines, and retrieval systems that answer fast.
-            </p>
+              <p className="hero__lede">
+                I build systems that have to keep up: real-time data pipelines,
+                physics engines, and retrieval systems that answer fast.
+              </p>
 
-            <div className="hero__actions">
-              <a className="btn btn--solid" href="#portfolio">
-                See the work
-              </a>
-              <a
-                className="btn btn--quiet"
-                href="mailto:aditya.jha2020123@gmail.com"
-              >
-                Email me
-              </a>
+              <div className="hero__actions">
+                <a className="btn btn--solid" href="#portfolio">
+                  See the work
+                </a>
+                <a
+                  className="btn btn--quiet"
+                  href="mailto:aditya.jha2020123@gmail.com"
+                >
+                  Email me
+                </a>
+              </div>
+
+              <div className="hero__rule" />
+
+              <p className="hero__now">
+                Most recently a SWE intern at
+                <b>Bloomberg</b> writing C++ market-data ingestion.
+              </p>
             </div>
 
-            <div className="hero__rule" />
-
-            <p className="hero__now">
-              Most recently a software engineering intern at <b>Bloomberg</b> writing C++ market-data ingestion.
-            </p>
+            <Tesseract />
           </div>
         </section>
 
@@ -145,7 +152,14 @@ export default function Home() {
 
             <div className="prose">
               <p>
-                I&apos;m a computer science major at CCNY, with minors in mathematics and philosophy, who likes building things end to end. At Bloomberg, I built a C++ real-time data ingestion pipeline that turned raw vendor feeds into market-data ticks. Outside of internships, I've worked on machine learning, computer vision, accessibility, and quirkier projects like a retrieval system that knows the Cosmere like the back of its metaphorical hand.
+                I&apos;m a computer science major at CCNY, 
+                with minors in mathematics and philosophy, 
+                who likes building things end to end. 
+                At Bloomberg, I built a C++ real-time data ingestion pipeline 
+                that turned raw vendor feeds into market-data ticks. 
+                Outside of internships, I've worked on machine learning, computer vision,
+                 accessibility, and quirkier projects like a retrieval system that knows the 
+                 Cosmere like the back of its metaphorical hand.
               </p>
               <p>
                 Right now, I&apos;m spending most of my time in C++, building
@@ -155,8 +169,8 @@ export default function Home() {
               </p>
               <p>
                 Away from the keyboard: science fiction (please read{" "}
-                <em>Blindsight</em>), <em>Dark Souls</em>,
-                and squash in the real world.
+                <em>Blindsight</em>), <em>Breath of the Wild</em> on the Switch,
+                and <em>Squash</em> in the real world.
               </p>
             </div>
           </div>
@@ -168,7 +182,7 @@ export default function Home() {
             <div className="section__head">
               <h2 className="section__title">Experience</h2>
               <p className="section__lede">
-                Internships, fellowships, and mentorships, most recent first.
+                Internships, fellowships, and mentorships.
               </p>
             </div>
 
@@ -185,7 +199,7 @@ export default function Home() {
               ))}
 
               <p className="timeline__note">
-                Always excited for what&apos;s next. More to come.
+                Always excited for what&apos;s next.
               </p>
             </div>
           </div>
@@ -264,6 +278,7 @@ export default function Home() {
           <span>New York, NY</span>
         </div>
       </footer>
+      <ScrollTrail />
     </div>
   );
 }

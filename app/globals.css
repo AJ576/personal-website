@@ -35,7 +35,8 @@
     "Roboto Mono", monospace;
 
   /* metrics */
-  --header-h: 3.75rem;
+  --header-h: 2.875rem;
+  --trail-h: 24px; /* must match STRIP in components/scroll-trail.js */
   --gutter: 1.5rem;
   --measure: 66ch;
   --radius-panel: 12px;
@@ -80,7 +81,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 1.5rem);
+  scroll-padding-top: calc(var(--header-h) + var(--trail-h) + 1.5rem);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -198,7 +199,6 @@ a {
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: saturate(160%) blur(12px);
   -webkit-backdrop-filter: saturate(160%) blur(12px);
-  border-bottom: 1px solid var(--rule);
 }
 
 .site-header__inner {
@@ -237,9 +237,10 @@ a {
 
 .nav__link {
   position: relative;
-  padding: 0.4rem 0.7rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 999px;
   font-size: 0.925rem;
+  line-height: 1.25;
   color: var(--ink-muted);
   white-space: nowrap;
   transition: color var(--fast) var(--ease),
@@ -258,10 +259,53 @@ a {
 .hero {
   --section-bg: var(--bg);
   background: var(--section-bg);
-  min-height: calc(100svh - var(--header-h));
+  min-height: calc(100svh - var(--header-h) - var(--trail-h));
   display: flex;
   align-items: center;
   padding-block: clamp(4rem, 12vh, 8rem);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 23rem);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.hero__figure {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.hero__figure:active {
+  cursor: grabbing;
+}
+
+.hero__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  pointer-events: none;
+  transition: opacity var(--slow) var(--ease);
+}
+
+.hero__hint[data-hidden="true"] {
+  opacity: 0;
 }
 
 .hero__inner {
@@ -647,6 +691,44 @@ a {
   padding-block: 2rem;
 }
 
+/* ============================================================
+   Scroll trail
+   ============================================================ */
+
+.trail {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--header-h);
+  z-index: 40;
+  pointer-events: none;
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.trail__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-height: 420px) {
+  :root {
+    --trail-h: 0px;
+  }
+
+  .trail {
+    display: none;
+  }
+
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
 .site-footer__inner {
   display: flex;
   flex-wrap: wrap;
@@ -685,6 +767,11 @@ a {
     animation-delay: 0.4s;
   }
 
+  .hero__figure {
+    opacity: 0;
+    animation: rise 0.9s 0.45s var(--ease) forwards;
+  }
+
   .hero__rule {
     transform: scaleX(0);
     transform-origin: left;
@@ -712,6 +799,22 @@ a {
 /* ============================================================
    Responsive
    ============================================================ */
+
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .hero__figure {
+    max-width: 19rem;
+    margin-inline: auto;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+}
 
 @media (max-width: 860px) {
   .work-grid {

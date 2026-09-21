@@ -1,27 +1,23 @@
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["C/C++", "Python", "JavaScript", "TypeScript", "SQL", "PHP", "R"],
+    skills: ["C/C++", "Python", "JavaScript", "TypeScript"],
   },
   {
     title: "Machine learning",
     skills: [
       "PyTorch",
-      "TensorFlow",
-      "scikit-learn",
       "OpenCV",
-      "MediaPipe",
-      "CNNs",
-      "Computer vision",
+      "MediaPipe"
     ],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express", "Flask", "FastAPI", "Streamlit"],
+    skills: ["Node.js", "Express", "FastAPI", "Streamlit"],
   },
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "HTML/CSS"],
+    skills: ["Next.js", "React"],
   },
   {
     title: "Infrastructure",
@@ -29,7 +25,7 @@ const skillCategories = [
       "Docker",
       "Linux",
       "POSIX",
-      "CI/CD",
+      "Github Actions",
       "Google Cloud Platform",
       "AWS",
       "Vercel",
@@ -40,10 +36,8 @@ const skillCategories = [
     skills: [
       "PostgreSQL",
       "MySQL",
-      "MongoDB",
       "Supabase",
       "Firebase",
-      "BigQuery",
     ],
   },
   {
@@ -56,7 +50,7 @@ const skillCategories = [
       "Jupyter",
       "Postman",
       "Google Colab",
-      "Linear",
+      "Jira",
     ],
   },
 ];
