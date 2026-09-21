@@ -145,10 +145,7 @@ export default function Home() {
 
             <div className="prose">
               <p>
-                I&apos;m a computer science major at CCNY who likes building
-                things end to end, from full machine learning applications like
-                a posture detection app to quirkier ones like a retrieval system
-                that knows the Cosmere like the back of its metaphorical hand.
+                I&apos;m a computer science major at CCNY, with minors in mathematics and philosophy, who likes building things end to end. At Bloomberg, I built a C++ real-time data ingestion pipeline that turned raw vendor feeds into market-data ticks. Outside of internships, I've worked on machine learning, computer vision, accessibility, and quirkier projects like a retrieval system that knows the Cosmere like the back of its metaphorical hand.
               </p>
               <p>
                 Right now, I&apos;m spending most of my time in C++, building
@@ -158,7 +155,7 @@ export default function Home() {
               </p>
               <p>
                 Away from the keyboard: science fiction (please read{" "}
-                <em>Blindsight</em>), <em>Breath of the Wild</em> on the Switch,
+                <em>Blindsight</em>), <em>Dark Souls</em>,
                 and squash in the real world.
               </p>
             </div>
