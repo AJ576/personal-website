@@ -1,56 +1,61 @@
-import { Github, Globe, Code } from "lucide-react";
+import { Github, Globe } from "lucide-react";
 
-export default function Projects({ name, content, link, demo = null, technologies = null }) {
+export default function Projects({
+  name,
+  content,
+  link,
+  demo = null,
+  technologies = null,
+}) {
+  const stack = technologies
+    ? technologies
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean)
+    : [];
+
   return (
-    <div className="border rounded-lg shadow-md p-4 max-w-md border-black transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-      {/* Name */}
-      <h3 className="text-xl font-semibold mb-2">{name}</h3>
+    <article className="card">
+      <h3 className="card__title">{name}</h3>
+      <p className="card__body">{content}</p>
 
-      {/* Content */}
-      <p className="text-gray-700 mb-4">{content}</p>
-
-      {/* Technologies */}
-      {technologies && (
-        <div className="mb-4">
-          <div className="flex items-center gap-1 mb-2">
-            <Code className="w-4 h-4 text-gray-600" />
-            <span className="text-sm font-medium text-gray-600">Technologies:</span>
-          </div>
-          <p className="text-sm text-blue-600 font-medium">{technologies}</p>
-        </div>
+      {stack.length > 0 && (
+        <ul className="stack" aria-label="Built with">
+          {stack.map((item) => (
+            <li key={item} className="stack__item">
+              {item}
+            </li>
+          ))}
+        </ul>
       )}
 
-      <div className="flex gap-4 mt-4">
-        {/* GitHub Link */}
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-blue-500 hover:underline"
-          >
-            <span className="bg-black text-white rounded-full p-1 mr-2">
-              <Github className="w-5 h-5" />
-            </span>
-            GitHub
-          </a>
-        )}
+      {(link || demo) && (
+        <div className="card__links">
+          {link && (
+            <a
+              className="link"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github aria-hidden="true" />
+              Source
+            </a>
+          )}
 
-        {/* Demo Link */}
-        {demo && (
-          <a
-            href={demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-green-500 hover:underline"
-          >
-            <span className="bg-black text-white rounded-full p-1 mr-2">
-              <Globe className="w-5 h-5" />
-            </span>
-            Live Demo
-          </a>
-        )}
-      </div>
-    </div>
+          {demo && (
+            <a
+              className="link"
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Globe aria-hidden="true" />
+              Live demo
+            </a>
+          )}
+        </div>
+      )}
+    </article>
   );
 }
