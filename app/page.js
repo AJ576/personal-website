@@ -10,8 +10,19 @@ export default function Home() {
       title: "Software Engineering Intern",
       company: "Bloomberg",
       location: "New York, NY",
-      duration: "Jun 2026 – Present",
-      responsibilities: []
+      duration: "Jun 2026 – Aug 2026",
+      responsibilities: [
+      "Built a C++ real-time data ingestion pipeline from scratch, parsing raw JSON from 5 vendors, normalizing messages into a common representation, and generating downstream market-data ticks",
+      "Built a configuration-driven parser supporting vendor-specific message formats and multiple concurrent data channels per connection, enabling new parsing requirements without modifying core parser logic",
+      "Designed a state machine for authentication, subscriptions, automatic reconnection, exponential backoff, and repeated connection retries",
+      "Added comprehensive unit tests across parser functions and connection states, and implemented an observer-based monitoring system for logging and extensible alerting"
+      ]
+    },
+    {
+      title: "VSWEP Mentee",
+      company: "Google x Basta",
+      location: "New York, NY",
+      duration: "Sep 2025 – May 2026",
     },
     {
       title: "Tech Fellow",
@@ -120,33 +131,13 @@ export default function Home() {
             </p>
           </section>
 
-          <section id="portfolio" className="min-h-screen py-16 bg-white">
-            <div className="container mx-auto text-center">
-              <h2 className="text-3xl font-semibold mb-6">My Work</h2>
-              <p className="text-lg text-gray-600 py-5">Here are some projects I've worked on...</p>
-              <div className="flex flex-wrap justify-center gap-8">
-                {projects.map((project, index) => (
-                  <Projects
-                    key={index}
-                    img={project.img}
-                    name={project.name}
-                    content={project.content}
-                    link={project.link}
-                    demo={project.demo}
-                    technologies={project.technologies}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
-
           {/* Experience Section */}
           <section id="experience" className="py-16 bg-white">
             <div className="container mx-auto px-6">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-800 mb-4">Professional Experience</h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  My journey in the tech industry, from internships to fellowships
+                  My journey in the tech industry
                 </p>
               </div>
 
@@ -166,6 +157,25 @@ export default function Home() {
                     location={experience.location}
                     duration={experience.duration}
                     responsibilities={experience.responsibilities}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+                    <section id="portfolio" className="min-h-screen py-16 bg-white">
+            <div className="container mx-auto text-center">
+              <h2 className="text-3xl font-semibold mb-6">My Work</h2>
+              <p className="text-lg text-gray-600 py-5">Here are some projects I've worked on...</p>
+              <div className="flex flex-wrap justify-center gap-8">
+                {projects.map((project, index) => (
+                  <Projects
+                    key={index}
+                    img={project.img}
+                    name={project.name}
+                    content={project.content}
+                    link={project.link}
+                    demo={project.demo}
+                    technologies={project.technologies}
                   />
                 ))}
               </div>
