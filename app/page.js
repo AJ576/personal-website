@@ -36,8 +36,8 @@ export default function Home() {
       location: "New York, NY",
       duration: "Sep 2025 – Dec 2025",
       responsibilities: [
-        "Developed pipelines to analyze 25K+ candidate/job records, improving job-to-candidate matching accuracy",
-        "Built text preprocessing services with normalization, tokenization, and REST API integration",
+        "Worked in a team of 6 on a system that matches resumes to job postings using text embeddings and a ranking model",
+        "Distilled a large embedding model into a small, interpretable model that still ranked matches accurately",
       ],
     },
     {
@@ -66,6 +66,29 @@ export default function Home() {
 
   const projects = [
     {
+      name: "EquiLearn",
+      content:
+        "An iOS app that helps blind and low-vision students explore math graphs through touch, sound, and haptics. I built the math parser and real-time audio engine from scratch. Published at MIT URTC 2026.",
+      link: "https://github.com/zcindy22/EquiLearn",
+      technologies: "Swift, SwiftUI, Core Haptics, AVFoundation",
+    },
+    {
+      name: "Galactic Cruise",
+      content:
+        "A browser space-exploration game with procedurally generated solar systems you can fly between and land on. Planet terrain streams in at increasing detail as you approach, with real orbital motion and custom shader-based eclipses.",
+      link: "https://github.com/AJ576/solar_system",
+      demo: "https://galactic-cruise.vercel.app/",
+      technologies: "Three.js, WebGL, GLSL, Vite",
+    },
+    {
+      name: "Cosmere Archivist – RAG System",
+      content:
+        "A Q&A app that answers questions about Brandon Sanderson's Cosmere using thousands of wiki articles. I built the whole pipeline, from scraping to search to the web client, and squeezed the backend into a 512 MB free-tier container.",
+      link: "https://github.com/AJ576/loreGPT",
+      demo: "https://cosmere-archivist.vercel.app/",
+      technologies: "Python, FastAPI, Next.js, FAISS, Docker",
+    },
+    {
       name: "Real-Time 2D Physics Engine",
       content:
         "Built a real-time rigid-body physics engine simulating 10,000+ circular bodies at a consistent 60 FPS with fixed-timestep integration. Implemented spatial grid broad-phase collision detection and impulse-based resolution, plus interactive controls for gravity, boundaries, and real-time FPS/energy visualization.",
@@ -78,13 +101,6 @@ export default function Home() {
         "Engineered a Unix-like shell implementing process creation and execution via fork/execvp, with support for pipelines and I/O redirection. Designed a job control system using process groups and SIGCHLD handling, and built a robust parser supporting quotes, escapes, and multi-stage pipelines.",
       link: "https://github.com/AJ576/shell",
       technologies: "C++17",
-    },
-    {
-      name: "Cosmere Archivist – RAG System",
-      content:
-        "Crawled and structured 6,000+ wiki documents into a cleaned dataset via an automated ETL pipeline with deduplication and embedding generation. Replaced brute-force search with FAISS semantic search, cutting query latency by 80%, and containerized the backend with Docker.",
-      link: "https://github.com/AJ576/loreGPT",
-      technologies: "Python, FastAPI, Next.js, Docker, FAISS, VectorDB, Gemini",
     },
     {
       name: "SitRight – Posture Detection App",
